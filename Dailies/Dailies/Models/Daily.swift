@@ -8,12 +8,24 @@
 
 import Foundation
 
+enum Difficulty {
+    case easy, medium, hard, epic
+}
+
+enum Unit {
+    case time, quantity
+}
+
 class Daily {
 
     var skill: Skill
-    var difficulty: String = ""
+    var task: String = ""
+    var difficulty: [String: Int] = [:]
+    var isComplete: Bool = false
+    var unit: Unit
 
-    init(skill: Skill) {
+    init(skill: Skill, unit: Unit) {
         self.skill = skill
+        self.unit = unit
     }
 }
