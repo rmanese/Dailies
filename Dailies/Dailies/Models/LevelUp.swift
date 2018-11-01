@@ -1,5 +1,5 @@
 //
-//  Skill.swift
+//  LevelUp.swift
 //  Dailies
 //
 //  Created by Roberto Manese III on 11/1/18.
@@ -8,9 +8,10 @@
 
 import Foundation
 
-class Skill: LevelUp {
+class LevelUp {
 
-    var name: String = ""
-    var dailies: [Daily] = []
-
+    var level: Int = 1
+    var minExp: Int = 1
+    var maxExp: Int = 1
+    var percentage: Double = 1
 }

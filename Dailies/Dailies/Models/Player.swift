@@ -8,16 +8,11 @@
 
 import Foundation
 
-class Player {
+class Player: LevelUp {
 
     var name: String = ""
 
     var skills: [Skill] = []
     var dailies: [Daily] = []
-
-    var level: Int = 1
-    var minExp: Int = 1
-    var maxExp: Int = 1
-    var percentage: Double = 1
     
 }
