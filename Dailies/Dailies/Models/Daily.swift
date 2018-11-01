@@ -9,5 +9,11 @@
 import Foundation
 
 class Daily {
-    
+
+    var skill: Skill
+    var difficulty: String = ""
+
+    init(skill: Skill) {
+        self.skill = skill
+    }
 }
