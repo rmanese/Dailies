@@ -9,5 +9,13 @@
 import Foundation
 
 class Skill {
-    
+
+    var name: String = ""
+
+    var dailies: [Daily] = []
+
+    var level: Int = 1
+    var minExp: Int = 1
+    var maxExp: Int = 1
+    var percentage: Double = 1
 }
