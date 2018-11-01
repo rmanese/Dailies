@@ -14,6 +14,9 @@
 		D28AC2F0218A742E004CE3A4 /* DailiesVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D28AC2EE218A742E004CE3A4 /* DailiesVC.xib */; };
 		D28AC2F3218A7443004CE3A4 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28AC2F1218A7443004CE3A4 /* ProfileVC.swift */; };
 		D28AC2F4218A7443004CE3A4 /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D28AC2F2218A7443004CE3A4 /* ProfileVC.xib */; };
+		D28AC2F6218B7B25004CE3A4 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28AC2F5218B7B25004CE3A4 /* Player.swift */; };
+		D28AC2F8218B7BAB004CE3A4 /* Skill.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28AC2F7218B7BAB004CE3A4 /* Skill.swift */; };
+		D28AC2FA218B7BB3004CE3A4 /* Daily.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28AC2F9218B7BB3004CE3A4 /* Daily.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		D28AC2EE218A742E004CE3A4 /* DailiesVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailiesVC.xib; sourceTree = "<group>"; };
 		D28AC2F1218A7443004CE3A4 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		D28AC2F2218A7443004CE3A4 /* ProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
+		D28AC2F5218B7B25004CE3A4 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		D28AC2F7218B7BAB004CE3A4 /* Skill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skill.swift; sourceTree = "<group>"; };
+		D28AC2F9218B7BB3004CE3A4 /* Daily.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Daily.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +85,9 @@
 		D28AC2EB218A73B8004CE3A4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D28AC2F5218B7B25004CE3A4 /* Player.swift */,
+				D28AC2F7218B7BAB004CE3A4 /* Skill.swift */,
+				D28AC2F9218B7BB3004CE3A4 /* Daily.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -166,9 +175,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D28AC2F6218B7B25004CE3A4 /* Player.swift in Sources */,
 				D28AC2F3218A7443004CE3A4 /* ProfileVC.swift in Sources */,
+				D28AC2F8218B7BAB004CE3A4 /* Skill.swift in Sources */,
 				D28AC2EF218A742E004CE3A4 /* DailiesVC.swift in Sources */,
 				D28AC2D8218A734A004CE3A4 /* AppDelegate.swift in Sources */,
+				D28AC2FA218B7BB3004CE3A4 /* Daily.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
