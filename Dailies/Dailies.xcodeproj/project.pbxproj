@@ -102,14 +102,38 @@
 		D28AC2EC218A73F8004CE3A4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D2981CFB218C2E4D000A4068 /* Skill */,
+				D2981CFA218C2E39000A4068 /* Profile */,
+				D2981CF9218C2E2F000A4068 /* Dailies */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D2981CF9218C2E2F000A4068 /* Dailies */ = {
+			isa = PBXGroup;
+			children = (
 				D28AC2ED218A742E004CE3A4 /* DailiesVC.swift */,
 				D28AC2EE218A742E004CE3A4 /* DailiesVC.xib */,
+			);
+			path = Dailies;
+			sourceTree = "<group>";
+		};
+		D2981CFA218C2E39000A4068 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
 				D28AC2F1218A7443004CE3A4 /* ProfileVC.swift */,
 				D28AC2F2218A7443004CE3A4 /* ProfileVC.xib */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		D2981CFB218C2E4D000A4068 /* Skill */ = {
+			isa = PBXGroup;
+			children = (
 				D2981CF5218BCAA2000A4068 /* SkillsVC.swift */,
 				D2981CF6218BCAA2000A4068 /* SkillsVC.xib */,
 			);
-			path = Controllers;
+			path = Skill;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
