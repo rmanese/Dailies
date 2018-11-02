@@ -17,15 +17,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let dailiesVC = DailiesVC()
         let profileVC = ProfileVC()
-        let vcs = [dailiesVC, profileVC]
+        let skillsVC = SkillsVC()
+        let vcs = [skillsVC, dailiesVC, profileVC]
 
         let tab = UITabBarController()
+        tab.addChild(skillsVC)
         tab.addChild(dailiesVC)
         tab.addChild(profileVC)
         tab.viewControllers = vcs.map {
             UINavigationController(rootViewController: $0)
         }
-        
+        tab.selectedIndex = 1
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.rootViewController = tab
         self.window?.makeKeyAndVisible()
