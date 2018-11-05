@@ -20,4 +20,8 @@ class SkillCell: UICollectionViewCell {
         self.expBar.transform = self.expBar.transform.scaledBy(x: 1, y: 5)
     }
 
+    func configure(skill: Skill) {
+        self.skillName.text = skill.name
+    }
+
 }

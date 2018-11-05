@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D256C72E218F833C00F1D53F /* SkillCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D256C72C218F833C00F1D53F /* SkillCell.swift */; };
+		D256C72F218F833C00F1D53F /* SkillCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D256C72D218F833C00F1D53F /* SkillCell.xib */; };
+		D256C732218FC77400F1D53F /* AddSkillVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D256C730218FC77400F1D53F /* AddSkillVC.swift */; };
+		D256C733218FC77400F1D53F /* AddSkillVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D256C731218FC77400F1D53F /* AddSkillVC.xib */; };
 		D28AC2D8218A734A004CE3A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28AC2D7218A734A004CE3A4 /* AppDelegate.swift */; };
 		D28AC2DF218A734D004CE3A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D28AC2DE218A734D004CE3A4 /* Assets.xcassets */; };
 		D28AC2E2218A734D004CE3A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D28AC2E0218A734D004CE3A4 /* LaunchScreen.storyboard */; };
@@ -23,6 +27,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D256C72C218F833C00F1D53F /* SkillCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillCell.swift; sourceTree = "<group>"; };
+		D256C72D218F833C00F1D53F /* SkillCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SkillCell.xib; sourceTree = "<group>"; };
+		D256C730218FC77400F1D53F /* AddSkillVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSkillVC.swift; sourceTree = "<group>"; };
+		D256C731218FC77400F1D53F /* AddSkillVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddSkillVC.xib; sourceTree = "<group>"; };
 		D28AC2D4218A734A004CE3A4 /* Dailies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dailies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D28AC2D7218A734A004CE3A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D28AC2DE218A734D004CE3A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +59,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D256C72B218F831200F1D53F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D256C72C218F833C00F1D53F /* SkillCell.swift */,
+				D256C72D218F833C00F1D53F /* SkillCell.xib */,
+				D256C730218FC77400F1D53F /* AddSkillVC.swift */,
+				D256C731218FC77400F1D53F /* AddSkillVC.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		D28AC2CB218A734A004CE3A4 = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +149,7 @@
 		D2981CFB218C2E4D000A4068 /* Skill */ = {
 			isa = PBXGroup;
 			children = (
+				D256C72B218F831200F1D53F /* Views */,
 				D2981CF5218BCAA2000A4068 /* SkillsVC.swift */,
 				D2981CF6218BCAA2000A4068 /* SkillsVC.xib */,
 			);
@@ -195,6 +215,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D28AC2F4218A7443004CE3A4 /* ProfileVC.xib in Resources */,
+				D256C733218FC77400F1D53F /* AddSkillVC.xib in Resources */,
+				D256C72F218F833C00F1D53F /* SkillCell.xib in Resources */,
 				D2981CF8218BCAA2000A4068 /* SkillsVC.xib in Resources */,
 				D28AC2E2218A734D004CE3A4 /* LaunchScreen.storyboard in Resources */,
 				D28AC2DF218A734D004CE3A4 /* Assets.xcassets in Resources */,
@@ -209,7 +231,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D256C732218FC77400F1D53F /* AddSkillVC.swift in Sources */,
 				D28AC2F6218B7B25004CE3A4 /* Player.swift in Sources */,
+				D256C72E218F833C00F1D53F /* SkillCell.swift in Sources */,
 				D28AC2F3218A7443004CE3A4 /* ProfileVC.swift in Sources */,
 				D28AC2F8218B7BAB004CE3A4 /* Skill.swift in Sources */,
 				D28AC2EF218A742E004CE3A4 /* DailiesVC.swift in Sources */,

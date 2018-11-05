@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SkillsVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class SkillsVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, AddSkillDelegate {
 
     @IBOutlet weak var collectionView: UICollectionView!
 
@@ -51,12 +51,20 @@ class SkillsVC: UIViewController, UICollectionViewDataSource, UICollectionViewDe
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "skillcell", for: indexPath)
+        let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "skillcell", for: indexPath) as! SkillCell
+        cell.configure(skill: self.skills[indexPath.row])
         return cell
     }
 
     @objc func didTapAddSkillButton() {
-        self.navigationController?.pushViewController(AddSkillVC(), animated: false)
+        let addSkillVC = AddSkillVC()
+        addSkillVC.delegate = self
+        self.navigationController?.pushViewController(addSkillVC, animated: false)
+    }
+
+    func didCreateSkill(view: AddSkillVC, skill: Skill) {
+        self.skills.append(skill)
+        self.collectionView.reloadData()
     }
 
 }

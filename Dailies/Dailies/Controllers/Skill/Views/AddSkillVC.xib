@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddSkillVC" customModule="Dailies" customModuleProvider="target">
             <connections>
+                <outlet property="skillTextField" destination="D8Y-5X-ZZd" id="2QJ-Co-5x3"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
