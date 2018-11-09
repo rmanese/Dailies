@@ -90,8 +90,7 @@
 				D20CBA202193FD7400C65981 /* ExperienceBarView.swift */,
 				D20CBA1E2193FA7100C65981 /* ExperienceBarView.xib */,
 			);
-			name = Views;
-			path = "New Group";
+			path = Views;
 			sourceTree = "<group>";
 		};
 		D28AC2CB218A734A004CE3A4 = {
