@@ -35,7 +35,7 @@ class ExperienceBarView: UIView {
 
     func configure() {
         self.experienceBar.tintColor = UIColor.yellow
-        self.experienceBar.transform = self.experienceBar.transform.scaledBy(x: 1, y: 5)
+        self.experienceBar.transform = self.experienceBar.transform.scaledBy(x: 1, y: 10)
     }
 
 }
