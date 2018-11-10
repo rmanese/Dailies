@@ -10,6 +10,12 @@
 		D20CBA1F2193FA7100C65981 /* ExperienceBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D20CBA1E2193FA7100C65981 /* ExperienceBarView.xib */; };
 		D20CBA212193FD7400C65981 /* ExperienceBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20CBA202193FD7400C65981 /* ExperienceBarView.swift */; };
 		D2386E4221968B32009CF1A1 /* Difficulties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2386E4121968B32009CF1A1 /* Difficulties.swift */; };
+		D2386E452197657D009CF1A1 /* FormTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2386E432197657D009CF1A1 /* FormTextFieldCell.swift */; };
+		D2386E462197657D009CF1A1 /* FormTextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2386E442197657D009CF1A1 /* FormTextFieldCell.xib */; };
+		D2386E4B21976ADA009CF1A1 /* FormNumberFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2386E4921976ADA009CF1A1 /* FormNumberFieldCell.swift */; };
+		D2386E4C21976ADA009CF1A1 /* FormNumberFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2386E4A21976ADA009CF1A1 /* FormNumberFieldCell.xib */; };
+		D2386E5021976E6A009CF1A1 /* AddDailiesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2386E4E21976E6A009CF1A1 /* AddDailiesVC.swift */; };
+		D2386E5121976E6A009CF1A1 /* AddDailiesVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2386E4F21976E6A009CF1A1 /* AddDailiesVC.xib */; };
 		D256C72E218F833C00F1D53F /* SkillCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D256C72C218F833C00F1D53F /* SkillCell.swift */; };
 		D256C72F218F833C00F1D53F /* SkillCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D256C72D218F833C00F1D53F /* SkillCell.xib */; };
 		D256C732218FC77400F1D53F /* AddSkillVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D256C730218FC77400F1D53F /* AddSkillVC.swift */; };
@@ -37,6 +43,12 @@
 		D20CBA1E2193FA7100C65981 /* ExperienceBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExperienceBarView.xib; sourceTree = "<group>"; };
 		D20CBA202193FD7400C65981 /* ExperienceBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceBarView.swift; sourceTree = "<group>"; };
 		D2386E4121968B32009CF1A1 /* Difficulties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Difficulties.swift; sourceTree = "<group>"; };
+		D2386E432197657D009CF1A1 /* FormTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextFieldCell.swift; sourceTree = "<group>"; };
+		D2386E442197657D009CF1A1 /* FormTextFieldCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FormTextFieldCell.xib; sourceTree = "<group>"; };
+		D2386E4921976ADA009CF1A1 /* FormNumberFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormNumberFieldCell.swift; sourceTree = "<group>"; };
+		D2386E4A21976ADA009CF1A1 /* FormNumberFieldCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FormNumberFieldCell.xib; sourceTree = "<group>"; };
+		D2386E4E21976E6A009CF1A1 /* AddDailiesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDailiesVC.swift; sourceTree = "<group>"; };
+		D2386E4F21976E6A009CF1A1 /* AddDailiesVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddDailiesVC.xib; sourceTree = "<group>"; };
 		D256C72C218F833C00F1D53F /* SkillCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillCell.swift; sourceTree = "<group>"; };
 		D256C72D218F833C00F1D53F /* SkillCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SkillCell.xib; sourceTree = "<group>"; };
 		D256C730218FC77400F1D53F /* AddSkillVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSkillVC.swift; sourceTree = "<group>"; };
@@ -73,6 +85,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D2386E4721976582009CF1A1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D2386E432197657D009CF1A1 /* FormTextFieldCell.swift */,
+				D2386E442197657D009CF1A1 /* FormTextFieldCell.xib */,
+				D2386E4921976ADA009CF1A1 /* FormNumberFieldCell.swift */,
+				D2386E4A21976ADA009CF1A1 /* FormNumberFieldCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		D2386E4821976588009CF1A1 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				D270CB1C218FD89B00D128F3 /* StatsDisplayView.swift */,
+				D270CB1E218FD8A700D128F3 /* StatsDisplayView.xib */,
+				D20CBA202193FD7400C65981 /* ExperienceBarView.swift */,
+				D20CBA1E2193FA7100C65981 /* ExperienceBarView.xib */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		D2386E4D21976E3B009CF1A1 /* AddDailies */ = {
+			isa = PBXGroup;
+			children = (
+				D2386E4E21976E6A009CF1A1 /* AddDailiesVC.swift */,
+				D2386E4F21976E6A009CF1A1 /* AddDailiesVC.xib */,
+			);
+			path = AddDailies;
+			sourceTree = "<group>";
+		};
 		D256C72B218F831200F1D53F /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -87,10 +130,8 @@
 		D270CB1B218FD86200D128F3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D270CB1C218FD89B00D128F3 /* StatsDisplayView.swift */,
-				D270CB1E218FD8A700D128F3 /* StatsDisplayView.xib */,
-				D20CBA202193FD7400C65981 /* ExperienceBarView.swift */,
-				D20CBA1E2193FA7100C65981 /* ExperienceBarView.xib */,
+				D2386E4821976588009CF1A1 /* Shared */,
+				D2386E4721976582009CF1A1 /* Cells */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -140,6 +181,7 @@
 		D28AC2EC218A73F8004CE3A4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D2386E4D21976E3B009CF1A1 /* AddDailies */,
 				D2981CFB218C2E4D000A4068 /* Skill */,
 				D2981CFA218C2E39000A4068 /* Profile */,
 				D2981CF9218C2E2F000A4068 /* Dailies */,
@@ -236,6 +278,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D28AC2F4218A7443004CE3A4 /* ProfileVC.xib in Resources */,
+				D2386E4C21976ADA009CF1A1 /* FormNumberFieldCell.xib in Resources */,
+				D2386E462197657D009CF1A1 /* FormTextFieldCell.xib in Resources */,
 				D270CB19218FD72000D128F3 /* SkillDetailsVC.xib in Resources */,
 				D256C733218FC77400F1D53F /* AddSkillVC.xib in Resources */,
 				D256C72F218F833C00F1D53F /* SkillCell.xib in Resources */,
@@ -245,6 +289,7 @@
 				D28AC2DF218A734D004CE3A4 /* Assets.xcassets in Resources */,
 				D20CBA1F2193FA7100C65981 /* ExperienceBarView.xib in Resources */,
 				D28AC2F0218A742E004CE3A4 /* DailiesVC.xib in Resources */,
+				D2386E5121976E6A009CF1A1 /* AddDailiesVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,8 +304,11 @@
 				D270CB1D218FD89B00D128F3 /* StatsDisplayView.swift in Sources */,
 				D28AC2F6218B7B25004CE3A4 /* Player.swift in Sources */,
 				D256C72E218F833C00F1D53F /* SkillCell.swift in Sources */,
+				D2386E452197657D009CF1A1 /* FormTextFieldCell.swift in Sources */,
+				D2386E4B21976ADA009CF1A1 /* FormNumberFieldCell.swift in Sources */,
 				D28AC2F3218A7443004CE3A4 /* ProfileVC.swift in Sources */,
 				D28AC2F8218B7BAB004CE3A4 /* Skill.swift in Sources */,
+				D2386E5021976E6A009CF1A1 /* AddDailiesVC.swift in Sources */,
 				D28AC2EF218A742E004CE3A4 /* DailiesVC.swift in Sources */,
 				D2981CF7218BCAA2000A4068 /* SkillsVC.swift in Sources */,
 				D2386E4221968B32009CF1A1 /* Difficulties.swift in Sources */,
