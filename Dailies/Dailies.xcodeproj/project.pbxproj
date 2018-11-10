@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D20CBA1F2193FA7100C65981 /* ExperienceBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D20CBA1E2193FA7100C65981 /* ExperienceBarView.xib */; };
 		D20CBA212193FD7400C65981 /* ExperienceBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20CBA202193FD7400C65981 /* ExperienceBarView.swift */; };
+		D2386E4221968B32009CF1A1 /* Difficulties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2386E4121968B32009CF1A1 /* Difficulties.swift */; };
 		D256C72E218F833C00F1D53F /* SkillCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D256C72C218F833C00F1D53F /* SkillCell.swift */; };
 		D256C72F218F833C00F1D53F /* SkillCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D256C72D218F833C00F1D53F /* SkillCell.xib */; };
 		D256C732218FC77400F1D53F /* AddSkillVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D256C730218FC77400F1D53F /* AddSkillVC.swift */; };
@@ -35,6 +36,7 @@
 /* Begin PBXFileReference section */
 		D20CBA1E2193FA7100C65981 /* ExperienceBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExperienceBarView.xib; sourceTree = "<group>"; };
 		D20CBA202193FD7400C65981 /* ExperienceBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceBarView.swift; sourceTree = "<group>"; };
+		D2386E4121968B32009CF1A1 /* Difficulties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Difficulties.swift; sourceTree = "<group>"; };
 		D256C72C218F833C00F1D53F /* SkillCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillCell.swift; sourceTree = "<group>"; };
 		D256C72D218F833C00F1D53F /* SkillCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SkillCell.xib; sourceTree = "<group>"; };
 		D256C730218FC77400F1D53F /* AddSkillVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSkillVC.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				D28AC2F7218B7BAB004CE3A4 /* Skill.swift */,
 				D28AC2F9218B7BB3004CE3A4 /* Daily.swift */,
 				D2981CF3218BC355000A4068 /* LevelUp.swift */,
+				D2386E4121968B32009CF1A1 /* Difficulties.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 				D28AC2F8218B7BAB004CE3A4 /* Skill.swift in Sources */,
 				D28AC2EF218A742E004CE3A4 /* DailiesVC.swift in Sources */,
 				D2981CF7218BCAA2000A4068 /* SkillsVC.swift in Sources */,
+				D2386E4221968B32009CF1A1 /* Difficulties.swift in Sources */,
 				D20CBA212193FD7400C65981 /* ExperienceBarView.swift in Sources */,
 				D2981CF4218BC355000A4068 /* LevelUp.swift in Sources */,
 				D270CB18218FD72000D128F3 /* SkillDetailsVC.swift in Sources */,
