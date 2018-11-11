@@ -23,10 +23,8 @@ class AddSkillVC: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
 
         self.title = "Add Skill"
-        let rightBarButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(didPressDone))
-        let leftBarButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(didPressBack))
-        self.navigationItem.rightBarButtonItem = rightBarButton
-        self.navigationItem.leftBarButtonItem = leftBarButton
+        self.configureBackButton()
+        self.configureSaveButton()
 
         self.skillTextField.delegate = self
         
@@ -36,10 +34,6 @@ class AddSkillVC: UIViewController, UITextFieldDelegate {
         self.navigationController?.popViewController(animated: false)
         self.configureSkill()
         self.delegate?.didCreateSkill(view: self, skill: self.skill)
-    }
-
-    @objc func didPressBack() {
-        self.navigationController?.popViewController(animated: false)
     }
 
     private func configureSkill() {

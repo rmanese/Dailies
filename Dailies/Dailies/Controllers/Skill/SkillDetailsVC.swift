@@ -38,7 +38,8 @@ class SkillDetailsVC: UIViewController {
     }
 
     @objc func didTapAddDailyButton() {
-        self.navigationController?.pushViewController(AddDailiesVC(), animated: false)
+        let daily = Daily(skill: self.skill)
+        self.navigationController?.pushViewController(AddDailiesVC(daily: daily), animated: false)
     }
 
 }

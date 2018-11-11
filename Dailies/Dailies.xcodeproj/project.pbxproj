@@ -20,6 +20,9 @@
 		D256C72F218F833C00F1D53F /* SkillCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D256C72D218F833C00F1D53F /* SkillCell.xib */; };
 		D256C732218FC77400F1D53F /* AddSkillVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D256C730218FC77400F1D53F /* AddSkillVC.swift */; };
 		D256C733218FC77400F1D53F /* AddSkillVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D256C731218FC77400F1D53F /* AddSkillVC.xib */; };
+		D26326D92197A2E400237885 /* UIFont+Dailies.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26326D82197A2E400237885 /* UIFont+Dailies.swift */; };
+		D26326DB2197A30400237885 /* UITableView+Dailies.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26326DA2197A30400237885 /* UITableView+Dailies.swift */; };
+		D26326DE2197A7DB00237885 /* UIViewController+Dailies.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26326DD2197A7DB00237885 /* UIViewController+Dailies.swift */; };
 		D270CB18218FD72000D128F3 /* SkillDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D270CB16218FD72000D128F3 /* SkillDetailsVC.swift */; };
 		D270CB19218FD72000D128F3 /* SkillDetailsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D270CB17218FD72000D128F3 /* SkillDetailsVC.xib */; };
 		D270CB1D218FD89B00D128F3 /* StatsDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D270CB1C218FD89B00D128F3 /* StatsDisplayView.swift */; };
@@ -53,6 +56,9 @@
 		D256C72D218F833C00F1D53F /* SkillCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SkillCell.xib; sourceTree = "<group>"; };
 		D256C730218FC77400F1D53F /* AddSkillVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSkillVC.swift; sourceTree = "<group>"; };
 		D256C731218FC77400F1D53F /* AddSkillVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddSkillVC.xib; sourceTree = "<group>"; };
+		D26326D82197A2E400237885 /* UIFont+Dailies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Dailies.swift"; sourceTree = "<group>"; };
+		D26326DA2197A30400237885 /* UITableView+Dailies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Dailies.swift"; sourceTree = "<group>"; };
+		D26326DD2197A7DB00237885 /* UIViewController+Dailies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Dailies.swift"; sourceTree = "<group>"; };
 		D270CB16218FD72000D128F3 /* SkillDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillDetailsVC.swift; sourceTree = "<group>"; };
 		D270CB17218FD72000D128F3 /* SkillDetailsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SkillDetailsVC.xib; sourceTree = "<group>"; };
 		D270CB1C218FD89B00D128F3 /* StatsDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsDisplayView.swift; sourceTree = "<group>"; };
@@ -127,6 +133,16 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		D26326D72197A2C500237885 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D26326D82197A2E400237885 /* UIFont+Dailies.swift */,
+				D26326DA2197A30400237885 /* UITableView+Dailies.swift */,
+				D26326DD2197A7DB00237885 /* UIViewController+Dailies.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		D270CB1B218FD86200D128F3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +175,7 @@
 				D28AC2EB218A73B8004CE3A4 /* Models */,
 				D270CB1B218FD86200D128F3 /* Views */,
 				D28AC2EC218A73F8004CE3A4 /* Controllers */,
+				D26326D72197A2C500237885 /* Extensions */,
 				D28AC2DE218A734D004CE3A4 /* Assets.xcassets */,
 				D28AC2E0218A734D004CE3A4 /* LaunchScreen.storyboard */,
 				D28AC2E3218A734D004CE3A4 /* Info.plist */,
@@ -300,8 +317,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D26326D92197A2E400237885 /* UIFont+Dailies.swift in Sources */,
+				D26326DB2197A30400237885 /* UITableView+Dailies.swift in Sources */,
 				D256C732218FC77400F1D53F /* AddSkillVC.swift in Sources */,
 				D270CB1D218FD89B00D128F3 /* StatsDisplayView.swift in Sources */,
+				D26326DE2197A7DB00237885 /* UIViewController+Dailies.swift in Sources */,
 				D28AC2F6218B7B25004CE3A4 /* Player.swift in Sources */,
 				D256C72E218F833C00F1D53F /* SkillCell.swift in Sources */,
 				D2386E452197657D009CF1A1 /* FormTextFieldCell.swift in Sources */,
