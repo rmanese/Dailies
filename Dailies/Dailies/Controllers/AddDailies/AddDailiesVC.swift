@@ -12,15 +12,29 @@ enum AddDailiesFormRows: Int, CaseIterable {
     case task, unit, easy, medium, hard, epic
 }
 
-class AddDailiesVC: UIViewController, UITableViewDataSource {
+class AddDailiesVC: UIViewController, UITableViewDataSource, FormTextFieldDelegate, FormNumberFieldDelegate {
 
     @IBOutlet weak var tableView: UITableView!
-    
+
+    var daily: Daily
+
+    init(daily: Daily) {
+        self.daily = daily
+        super.init(nibName: nil,  bundle: nil)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.tableView.dataSource = self
         self.configureTableView()
+        self.configureSaveButton()
+        self.configureBackButton()
+        self.view.backgroundColor = UIColor.purple
     }
 
     // MARK: - Private Methods
@@ -28,9 +42,6 @@ class AddDailiesVC: UIViewController, UITableViewDataSource {
     private func configureTableView() {
         self.tableView.separatorStyle = .none
         self.tableView.tableFooterView = UIView()
-
-        self.tableView.register(UINib(nibName: String(describing: FormTextFieldCell.self), bundle: nil), forCellReuseIdentifier: "FormTextFieldCell")
-        self.tableView.register(UINib(nibName: String(describing: FormNumberFieldCell.self), bundle: nil), forCellReuseIdentifier: "FormNumberFieldCell")
     }
 
     // MARK: - UITableViewDataSource
@@ -42,29 +53,62 @@ class AddDailiesVC: UIViewController, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
         case AddDailiesFormRows.task.rawValue:
-            let cell = self.tableView.dequeueReusableCell(withIdentifier: "FormTextFieldCell") as! FormTextFieldCell
+            let cell = self.tableView.dequeueNibCell(cellClass: FormTextFieldCell.self)
             cell.title = "Task"
+            cell.delegate = self
             return cell
         case AddDailiesFormRows.unit.rawValue:
             return UITableViewCell()
         case AddDailiesFormRows.easy.rawValue:
-            let cell = self.tableView.dequeueReusableCell(withIdentifier: "FormNumberFieldCell") as! FormNumberFieldCell
+            let cell = self.tableView.dequeueNibCell(cellClass: FormNumberFieldCell.self)
             cell.title = "Easy"
+            cell.delegate = self
             return cell
         case AddDailiesFormRows.medium.rawValue:
-            let cell = self.tableView.dequeueReusableCell(withIdentifier: "FormNumberFieldCell") as! FormNumberFieldCell
+            let cell = self.tableView.dequeueNibCell(cellClass: FormNumberFieldCell.self)
             cell.title = "Medium"
+            cell.delegate = self
             return cell
         case AddDailiesFormRows.hard.rawValue:
-            let cell = self.tableView.dequeueReusableCell(withIdentifier: "FormNumberFieldCell") as! FormNumberFieldCell
+            let cell = self.tableView.dequeueNibCell(cellClass: FormNumberFieldCell.self)
             cell.title = "Hard"
+            cell.delegate = self
             return cell
         case AddDailiesFormRows.epic.rawValue:
-            let cell = self.tableView.dequeueReusableCell(withIdentifier: "FormNumberFieldCell") as! FormNumberFieldCell
+            let cell = self.tableView.dequeueNibCell(cellClass: FormNumberFieldCell.self)
             cell.title = "Epic"
+            cell.delegate = self
             return cell
         default:
             return UITableViewCell()
+        }
+    }
+
+    @objc override func didPressBack() {
+
+    }
+
+    // MARK: - FormTextFieldDelegate
+
+    func didUpdateText(cell: FormTextFieldCell, content: String) {
+        self.daily.task = content
+    }
+
+    // MARK: - FormNumberFieldDelegate
+
+    func didUpdateText(cell: FormNumberFieldCell, content: String) {
+        guard let indexPath = self.tableView.indexPath(for: cell) else { return }
+        switch indexPath.row {
+        case AddDailiesFormRows.easy.rawValue:
+            break
+        case AddDailiesFormRows.medium.rawValue:
+            break
+        case AddDailiesFormRows.hard.rawValue:
+            break
+        case AddDailiesFormRows.epic.rawValue:
+            break
+        default:
+            break
         }
     }
 

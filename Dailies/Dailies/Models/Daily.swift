@@ -9,7 +9,7 @@
 import Foundation
 
 enum Unit {
-    case time, quantity
+    case time, quantity, none
 }
 
 class Daily {
@@ -18,10 +18,9 @@ class Daily {
     var task: String = ""
     var difficulties: [Difficulty] = []
     var isComplete: Bool = false
-    var unit: Unit
+    var unit: Unit = .none
 
-    init(skill: Skill, unit: Unit) {
+    init(skill: Skill) {
         self.skill = skill
-        self.unit = unit
     }
 }

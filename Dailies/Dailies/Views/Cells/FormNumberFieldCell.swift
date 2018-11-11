@@ -30,6 +30,7 @@ class FormNumberFieldCell: UITableViewCell, UITextFieldDelegate {
 
         self.textField.delegate = self
         self.textField.addTarget(self, action: #selector(didUpdateText), for: .editingChanged)
+        self.titleLabel.font = UIFont.dailiesTextFieldTitle()
     }
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
