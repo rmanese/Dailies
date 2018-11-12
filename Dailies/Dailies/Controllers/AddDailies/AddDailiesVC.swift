@@ -32,8 +32,8 @@ class AddDailiesVC: UIViewController, UITableViewDataSource, FormTextFieldDelega
 
         self.tableView.dataSource = self
         self.configureTableView()
-        self.configureSaveButton()
         self.configureBackButton()
+        self.configureSaveButton()
         self.view.backgroundColor = UIColor.purple
     }
 

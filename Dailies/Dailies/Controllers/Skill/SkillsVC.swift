@@ -65,7 +65,7 @@ class SkillsVC: UIViewController, UICollectionViewDataSource, UICollectionViewDe
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let skill = self.skills[indexPath.row]
-        let details = SkillDetailsVC(skill: skill)
+        let details = UINavigationController(rootViewController: SkillDetailsVC(skill: skill))
         self.navigationController?.pushViewController(details, animated: false)
     }
 
