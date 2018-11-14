@@ -24,7 +24,6 @@ class AddSkillVC: UIViewController, UITextFieldDelegate {
 
         self.title = "Add Skill"
         self.configureBackButton()
-        self.configureSaveButton()
 
         self.skillTextField.delegate = self
         

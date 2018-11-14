@@ -20,10 +20,4 @@ extension UIViewController {
         self.navigationController?.popViewController(animated: false)
     }
 
-    func configureSaveButton() {
-        let saveButton = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(didPressBack))
-        saveButton.tintColor = .black
-        self.navigationItem.rightBarButtonItem = saveButton
-    }
-
 }

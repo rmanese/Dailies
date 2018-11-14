@@ -9,7 +9,7 @@
 import UIKit
 
 protocol FormNumberFieldDelegate: class {
-    func didUpdateText(cell: FormNumberFieldCell, content: String)
+    func didUpdateQuantity(cell: FormNumberFieldCell, quantity: Int)
 }
 
 class FormNumberFieldCell: UITableViewCell, UITextFieldDelegate {
@@ -28,8 +28,9 @@ class FormNumberFieldCell: UITableViewCell, UITextFieldDelegate {
     override func awakeFromNib() {
         super.awakeFromNib()
 
+        self.selectionStyle = .none
         self.textField.delegate = self
-        self.textField.addTarget(self, action: #selector(didUpdateText), for: .editingChanged)
+        self.textField.addTarget(self, action: #selector(didUpdateQuantity), for: .editingChanged)
         self.titleLabel.font = UIFont.dailiesTextFieldTitle()
     }
 
@@ -40,9 +41,10 @@ class FormNumberFieldCell: UITableViewCell, UITextFieldDelegate {
         return true
     }
 
-    @objc func didUpdateText() {
-        let text = self.textField.text ?? ""
-        self.delegate?.didUpdateText(cell: self, content: text)
+    @objc func didUpdateQuantity() {
+        guard let input = self.textField.text else { return }
+        guard let number = Int(input) else { return }
+        self.delegate?.didUpdateQuantity(cell: self, quantity: number)
     }
     
 }

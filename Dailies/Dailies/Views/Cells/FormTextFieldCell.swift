@@ -28,13 +28,14 @@ class FormTextFieldCell: UITableViewCell, UITextFieldDelegate {
     override func awakeFromNib() {
         super.awakeFromNib()
 
+        self.selectionStyle = .none
         self.textField.delegate = self
         self.textField.addTarget(self, action: #selector(didUpdateText), for: .editingChanged)
         self.titleLabel.font = UIFont.dailiesTextFieldTitle()
     }
 
     @objc func didUpdateText() {
-        let text = self.textField.text ?? ""
+        guard let text = self.textField.text else { return }
         self.delegate?.didUpdateText(cell: self, content: text)
     }
     

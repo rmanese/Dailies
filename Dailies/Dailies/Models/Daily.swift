@@ -16,7 +16,7 @@ class Daily {
 
     var skill: Skill
     var task: String = ""
-    var difficulties: [Difficulty] = []
+    var difficulties: [String:Difficulty] = [:]
     var isComplete: Bool = false
     var unit: Unit = .none
 

@@ -14,9 +14,13 @@ enum AddDailiesFormRows: Int, CaseIterable {
 
 class AddDailiesVC: UIViewController, UITableViewDataSource, FormTextFieldDelegate, FormNumberFieldDelegate {
 
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak private var tableView: UITableView!
 
-    var daily: Daily
+    private var daily:  Daily
+    private var easy:   Int = 0
+    private var medium: Int = 0
+    private var hard:   Int = 0
+    private var epic:   Int = 0
 
     init(daily: Daily) {
         self.daily = daily
@@ -30,10 +34,13 @@ class AddDailiesVC: UIViewController, UITableViewDataSource, FormTextFieldDelega
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let saveButton = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(didPressSave))
+        saveButton.tintColor = .black
+        self.navigationItem.rightBarButtonItem = saveButton
+
         self.tableView.dataSource = self
         self.configureTableView()
         self.configureBackButton()
-        self.configureSaveButton()
         self.view.backgroundColor = UIColor.purple
     }
 
@@ -42,6 +49,21 @@ class AddDailiesVC: UIViewController, UITableViewDataSource, FormTextFieldDelega
     private func configureTableView() {
         self.tableView.separatorStyle = .none
         self.tableView.tableFooterView = UIView()
+    }
+
+//    private func configureDaily() {
+//        let easy = Difficulty(difficulty: .easy, daily: self.daily, quantity: self.easy)
+//        let medium = Difficulty(difficulty: .medium, daily: self.daily, quantity: self.medium)
+//        let hard = Difficulty(difficulty: .hard, daily: self.daily, quantity: self.hard)
+//        let epic = Difficulty(difficulty: .epic, daily: self.daily, quantity: self.epic)
+//
+//        self.daily.difficulties[DifficultyLevel.easy.rawValue] = easy
+//    }
+
+    // MARK: - Action Methods
+
+    @objc func didPressSave() {
+
     }
 
     // MARK: - UITableViewDataSource
@@ -84,10 +106,6 @@ class AddDailiesVC: UIViewController, UITableViewDataSource, FormTextFieldDelega
         }
     }
 
-    @objc override func didPressBack() {
-
-    }
-
     // MARK: - FormTextFieldDelegate
 
     func didUpdateText(cell: FormTextFieldCell, content: String) {
@@ -96,17 +114,17 @@ class AddDailiesVC: UIViewController, UITableViewDataSource, FormTextFieldDelega
 
     // MARK: - FormNumberFieldDelegate
 
-    func didUpdateText(cell: FormNumberFieldCell, content: String) {
+    func didUpdateQuantity(cell: FormNumberFieldCell, quantity: Int) {
         guard let indexPath = self.tableView.indexPath(for: cell) else { return }
         switch indexPath.row {
         case AddDailiesFormRows.easy.rawValue:
-            break
+            self.easy = quantity
         case AddDailiesFormRows.medium.rawValue:
-            break
+            self.medium = quantity
         case AddDailiesFormRows.hard.rawValue:
-            break
+            self.hard = quantity
         case AddDailiesFormRows.epic.rawValue:
-            break
+            self.epic = quantity
         default:
             break
         }
