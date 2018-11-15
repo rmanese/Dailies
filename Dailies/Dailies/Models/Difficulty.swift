@@ -1,5 +1,5 @@
 //
-//  Difficulties.swift
+//  Difficulty.swift
 //  Dailies
 //
 //  Created by Roberto Manese III on 11/9/18.

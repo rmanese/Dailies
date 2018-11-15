@@ -42,8 +42,8 @@ class FormNumberFieldCell: UITableViewCell, UITextFieldDelegate {
     }
 
     @objc func didUpdateQuantity() {
-        guard let input = self.textField.text else { return }
-        guard let number = Int(input) else { return }
+        let input = self.textField.text ?? ""
+        let number = Int(input) ?? 0
         self.delegate?.didUpdateQuantity(cell: self, quantity: number)
     }
     

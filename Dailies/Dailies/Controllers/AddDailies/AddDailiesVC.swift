@@ -12,15 +12,15 @@ enum AddDailiesFormRows: Int, CaseIterable {
     case task, unit, easy, medium, hard, epic
 }
 
-class AddDailiesVC: UIViewController, UITableViewDataSource, FormTextFieldDelegate, FormNumberFieldDelegate {
+class AddDailiesVC: UIViewController, UITableViewDataSource, FormTextFieldDelegate, FormNumberFieldDelegate, UnitDelegate {
 
     @IBOutlet weak private var tableView: UITableView!
 
     private var daily:  Daily
-    private var easy:   Int = 0
-    private var medium: Int = 0
-    private var hard:   Int = 0
-    private var epic:   Int = 0
+    private var easy:   Difficulty? = nil
+    private var medium: Difficulty? = nil
+    private var hard:   Difficulty? = nil
+    private var epic:   Difficulty? = nil
 
     init(daily: Daily) {
         self.daily = daily
@@ -48,13 +48,19 @@ class AddDailiesVC: UIViewController, UITableViewDataSource, FormTextFieldDelega
 
     private func configureTableView() {
         self.tableView.separatorStyle = .none
-        self.tableView.tableFooterView = UIView()
+        let footView = UIView()
+        footView.alpha = 0
+        self.tableView.tableFooterView = footView
+    }
+
+    private func quantityCheck(quantity: Int) -> Bool {
+        return quantity > 0
     }
 
 //    private func configureDaily() {
 //        let easy = Difficulty(difficulty: .easy, daily: self.daily, quantity: self.easy)
 //        let medium = Difficulty(difficulty: .medium, daily: self.daily, quantity: self.medium)
-//        let hard = Difficulty(difficulty: .hard, daily: self.daily, quantity: self.hard)
+//        let hard = Difficulty(difficulty: .hard, daily: self.daily, quantity: self.hard)int
 //        let epic = Difficulty(difficulty: .epic, daily: self.daily, quantity: self.epic)
 //
 //        self.daily.difficulties[DifficultyLevel.easy.rawValue] = easy
@@ -80,7 +86,9 @@ class AddDailiesVC: UIViewController, UITableViewDataSource, FormTextFieldDelega
             cell.delegate = self
             return cell
         case AddDailiesFormRows.unit.rawValue:
-            return UITableViewCell()
+            let cell = self.tableView.dequeueNibCell(cellClass: UnitCell.self)
+            cell.delegate = self
+            return cell
         case AddDailiesFormRows.easy.rawValue:
             let cell = self.tableView.dequeueNibCell(cellClass: FormNumberFieldCell.self)
             cell.title = "Easy"
@@ -118,16 +126,22 @@ class AddDailiesVC: UIViewController, UITableViewDataSource, FormTextFieldDelega
         guard let indexPath = self.tableView.indexPath(for: cell) else { return }
         switch indexPath.row {
         case AddDailiesFormRows.easy.rawValue:
-            self.easy = quantity
+            self.easy = Difficulty(difficulty: .easy, daily: self.daily, quantity: quantity)
         case AddDailiesFormRows.medium.rawValue:
-            self.medium = quantity
+            self.medium = Difficulty(difficulty: .medium, daily: self.daily, quantity: quantity)
         case AddDailiesFormRows.hard.rawValue:
-            self.hard = quantity
+            self.hard = Difficulty(difficulty: .hard, daily: self.daily, quantity: quantity)
         case AddDailiesFormRows.epic.rawValue:
-            self.epic = quantity
+            self.epic = Difficulty(difficulty: .epic, daily: self.daily, quantity: quantity)
         default:
             break
         }
+    }
+
+    // MARK: - UnitDelegate
+
+    func didSelectUnit(cell: UnitCell) {
+        
     }
 
 }
