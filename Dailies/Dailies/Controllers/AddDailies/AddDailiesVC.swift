@@ -17,10 +17,10 @@ class AddDailiesVC: UIViewController, UITableViewDataSource, FormTextFieldDelega
     @IBOutlet weak private var tableView: UITableView!
 
     private var daily:  Daily
-    private var easy:   Difficulty? = nil
-    private var medium: Difficulty? = nil
-    private var hard:   Difficulty? = nil
-    private var epic:   Difficulty? = nil
+    private var easy:   Easy? = nil
+    private var medium: Medium? = nil
+    private var hard:   Hard? = nil
+    private var epic:   Epic? = nil
 
     init(daily: Daily) {
         self.daily = daily
@@ -48,23 +48,13 @@ class AddDailiesVC: UIViewController, UITableViewDataSource, FormTextFieldDelega
 
     private func configureTableView() {
         self.tableView.separatorStyle = .none
-        let footView = UIView()
-        footView.alpha = 0
-        self.tableView.tableFooterView = footView
+        self.tableView.tableFooterView = UIView()
     }
 
-    private func quantityCheck(quantity: Int) -> Bool {
-        return quantity > 0
+    private func quantityChecker(difficulty: Difficulty?, quantity: Int) -> Difficulty? {
+        guard quantity > 0 else { return nil }
+        return nil
     }
-
-//    private func configureDaily() {
-//        let easy = Difficulty(difficulty: .easy, daily: self.daily, quantity: self.easy)
-//        let medium = Difficulty(difficulty: .medium, daily: self.daily, quantity: self.medium)
-//        let hard = Difficulty(difficulty: .hard, daily: self.daily, quantity: self.hard)int
-//        let epic = Difficulty(difficulty: .epic, daily: self.daily, quantity: self.epic)
-//
-//        self.daily.difficulties[DifficultyLevel.easy.rawValue] = easy
-//    }
 
     // MARK: - Action Methods
 
@@ -126,13 +116,13 @@ class AddDailiesVC: UIViewController, UITableViewDataSource, FormTextFieldDelega
         guard let indexPath = self.tableView.indexPath(for: cell) else { return }
         switch indexPath.row {
         case AddDailiesFormRows.easy.rawValue:
-            self.easy = Difficulty(difficulty: .easy, daily: self.daily, quantity: quantity)
+            self.easy = Easy(daily: self.daily, quantity: quantity)
         case AddDailiesFormRows.medium.rawValue:
-            self.medium = Difficulty(difficulty: .medium, daily: self.daily, quantity: quantity)
+            self.medium = Medium(daily: self.daily, quantity: quantity)
         case AddDailiesFormRows.hard.rawValue:
-            self.hard = Difficulty(difficulty: .hard, daily: self.daily, quantity: quantity)
+            self.hard = Hard(daily: self.daily, quantity: quantity)
         case AddDailiesFormRows.epic.rawValue:
-            self.epic = Difficulty(difficulty: .epic, daily: self.daily, quantity: quantity)
+            self.epic = Epic(daily: self.daily, quantity: quantity)
         default:
             break
         }

@@ -26,17 +26,20 @@ class AddSkillVC: UIViewController, UITextFieldDelegate {
         self.configureBackButton()
 
         self.skillTextField.delegate = self
-        
+        let saveButton = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(didTapSaveButton))
+        saveButton.tintColor = .black
+        self.navigationItem.rightBarButtonItem = saveButton
     }
 
-    @objc func didPressDone() {
+    @objc func didTapSaveButton() {
         self.navigationController?.popViewController(animated: false)
         self.configureSkill()
-        self.delegate?.didCreateSkill(view: self, skill: self.skill)
     }
 
     private func configureSkill() {
+        guard self.skillTextField.text != "" else { return }
         self.skill.name = self.skillTextField.text ?? ""
+        self.delegate?.didCreateSkill(view: self, skill: self.skill)
     }
 
 }

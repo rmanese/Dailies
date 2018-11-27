@@ -26,13 +26,52 @@ enum DifficultyLevel {
 }
 
 class Difficulty {
-    var daily: Daily
-    var difficulty: DifficultyLevel
+    let difficulty: DifficultyLevel
+    init(difficulty: DifficultyLevel) {
+        self.difficulty = difficulty
+    }
+}
+
+class Easy: Difficulty {
+    let daily: Daily
     var quantity: Int
 
-    init(difficulty: DifficultyLevel, daily: Daily, quantity: Int) {
-        self.difficulty = difficulty
+    init(daily: Daily, quantity: Int) {
         self.daily = daily
         self.quantity = quantity
+        super.init(difficulty: .easy)
+    }
+}
+
+class Medium: Difficulty {
+    var daily: Daily
+    var quantity: Int
+
+    init(daily: Daily, quantity: Int) {
+        self.daily = daily
+        self.quantity = quantity
+        super.init(difficulty: .medium)
+    }
+}
+
+class Hard: Difficulty {
+    var daily: Daily
+    var quantity: Int
+
+    init(daily: Daily, quantity: Int) {
+        self.daily = daily
+        self.quantity = quantity
+        super.init(difficulty: .hard)
+    }
+}
+
+class Epic: Difficulty {
+    var daily: Daily
+    var quantity: Int
+
+    init(daily: Daily, quantity: Int) {
+        self.daily = daily
+        self.quantity = quantity
+        super.init(difficulty: .epic)
     }
 }

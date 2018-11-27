@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol FormNumberFieldDelegate: class {
+protocol FormNumberFieldDelegate: AnyObject {
     func didUpdateQuantity(cell: FormNumberFieldCell, quantity: Int)
 }
 
