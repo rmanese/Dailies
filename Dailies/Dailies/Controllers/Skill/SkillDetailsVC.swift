@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SkillDetailsVC: UIViewController {
+class SkillDetailsVC: UIViewController, AddDailyDelegate {
 
     @IBOutlet weak var statsDisplayView: StatsDisplayView!
 
@@ -32,6 +32,12 @@ class SkillDetailsVC: UIViewController {
         self.configureStatView()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        NSLog("here")
+    }
+
     func configureStatView() {
         self.statsDisplayView.skillName.text = self.skill.name
         self.statsDisplayView.skillLevel.text = "Lv. \(self.skill.level)"
@@ -39,7 +45,15 @@ class SkillDetailsVC: UIViewController {
 
     @objc func didTapAddDailyButton() {
         let dailiesVC = AddDailiesVC(daily: Daily(skill: self.skill))
+        dailiesVC.delegate = self
         self.navigationController?.pushViewController(dailiesVC, animated: false)
+    }
+
+    // MARK: - AddDailyDelegate
+
+    func didCreateDaily(daily: Daily) {
+        self.skill.dailies.append(daily)
+        NSLog("here")
     }
 
 }

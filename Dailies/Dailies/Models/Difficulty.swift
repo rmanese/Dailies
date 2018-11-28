@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum DifficultyLevel {
+enum DegreeOfDifficulty {
     case easy, medium, hard, epic
 
     func getString() -> String {
@@ -26,52 +26,49 @@ enum DifficultyLevel {
 }
 
 class Difficulty {
-    let difficulty: DifficultyLevel
-    init(difficulty: DifficultyLevel) {
-        self.difficulty = difficulty
+    let degree: DegreeOfDifficulty
+    init(degree: DegreeOfDifficulty) {
+        self.degree = degree
     }
+
 }
 
 class Easy: Difficulty {
-    let daily: Daily
+    var daily: Daily? = nil
     var quantity: Int
 
-    init(daily: Daily, quantity: Int) {
-        self.daily = daily
+    init(quantity: Int) {
         self.quantity = quantity
-        super.init(difficulty: .easy)
+        super.init(degree: .easy)
     }
 }
 
 class Medium: Difficulty {
-    var daily: Daily
+    var daily: Daily? = nil
     var quantity: Int
 
-    init(daily: Daily, quantity: Int) {
-        self.daily = daily
+    init(quantity: Int) {
         self.quantity = quantity
-        super.init(difficulty: .medium)
+        super.init(degree: .medium)
     }
 }
 
 class Hard: Difficulty {
-    var daily: Daily
+    var daily: Daily? = nil
     var quantity: Int
 
-    init(daily: Daily, quantity: Int) {
-        self.daily = daily
+    init(quantity: Int) {
         self.quantity = quantity
-        super.init(difficulty: .hard)
+        super.init(degree: .hard)
     }
 }
 
 class Epic: Difficulty {
-    var daily: Daily
+    var daily: Daily? = nil
     var quantity: Int
 
-    init(daily: Daily, quantity: Int) {
-        self.daily = daily
+    init(quantity: Int) {
         self.quantity = quantity
-        super.init(difficulty: .epic)
+        super.init(degree: .epic)
     }
 }

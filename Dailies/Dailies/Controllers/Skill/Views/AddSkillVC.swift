@@ -32,7 +32,6 @@ class AddSkillVC: UIViewController, UITextFieldDelegate {
     }
 
     @objc func didTapSaveButton() {
-        self.navigationController?.popViewController(animated: false)
         self.configureSkill()
     }
 
@@ -40,6 +39,7 @@ class AddSkillVC: UIViewController, UITextFieldDelegate {
         guard self.skillTextField.text != "" else { return }
         self.skill.name = self.skillTextField.text ?? ""
         self.delegate?.didCreateSkill(view: self, skill: self.skill)
+        self.navigationController?.popViewController(animated: false)
     }
 
 }

@@ -12,15 +12,20 @@ enum AddDailiesFormRows: Int, CaseIterable {
     case task, unit, easy, medium, hard, epic
 }
 
+protocol AddDailyDelegate: class {
+    func didCreateDaily(daily: Daily)
+}
+
 class AddDailiesVC: UIViewController, UITableViewDataSource, FormTextFieldDelegate, FormNumberFieldDelegate, UnitDelegate {
 
     @IBOutlet weak private var tableView: UITableView!
 
-    private var daily:  Daily
-    private var easy:   Easy? = nil
+    private var daily: Daily
+    private var easy: Easy?     = nil
     private var medium: Medium? = nil
-    private var hard:   Hard? = nil
-    private var epic:   Epic? = nil
+    private var hard: Hard?     = nil
+    private var epic: Epic?     = nil
+    weak var delegate: AddDailyDelegate?
 
     init(daily: Daily) {
         self.daily = daily
@@ -51,15 +56,31 @@ class AddDailiesVC: UIViewController, UITableViewDataSource, FormTextFieldDelega
         self.tableView.tableFooterView = UIView()
     }
 
-    private func quantityChecker(difficulty: Difficulty?, quantity: Int) -> Difficulty? {
-        guard quantity > 0 else { return nil }
-        return nil
+    private func configureDaily() {
+        if let easy = self.easy {
+            easy.daily = self.daily
+            self.daily.difficulties[easy.degree.getString()] = easy
+        }
+        if let medium = self.medium {
+            medium.daily = self.daily
+            self.daily.difficulties[medium.degree.getString()] = medium
+        }
+        if let hard = self.hard {
+            hard.daily = self.daily
+            self.daily.difficulties[hard.degree.getString()] = hard
+        }
+        if let epic = self.epic {
+            epic.daily = self.daily
+            self.daily.difficulties[epic.degree.getString()] = epic
+        }
     }
 
     // MARK: - Action Methods
 
     @objc func didPressSave() {
-
+        self.configureDaily()
+        self.delegate?.didCreateDaily(daily: self.daily)
+        self.navigationController?.popViewController(animated: false)
     }
 
     // MARK: - UITableViewDataSource
@@ -110,28 +131,44 @@ class AddDailiesVC: UIViewController, UITableViewDataSource, FormTextFieldDelega
         self.daily.task = content
     }
 
+    // MARK: - UnitDelegate
+
+    func didSelectUnit(cell: UnitCell, unit: Unit) {
+        self.daily.unit = unit
+    }
+
     // MARK: - FormNumberFieldDelegate
 
     func didUpdateQuantity(cell: FormNumberFieldCell, quantity: Int) {
         guard let indexPath = self.tableView.indexPath(for: cell) else { return }
         switch indexPath.row {
         case AddDailiesFormRows.easy.rawValue:
-            self.easy = Easy(daily: self.daily, quantity: quantity)
+            guard quantity > 0 else {
+                self.easy = nil
+                return
+            }
+            self.easy = Easy(quantity: quantity)
         case AddDailiesFormRows.medium.rawValue:
-            self.medium = Medium(daily: self.daily, quantity: quantity)
+            guard quantity > 0 else {
+                self.medium = nil
+                return
+            }
+            self.medium = Medium(quantity: quantity)
         case AddDailiesFormRows.hard.rawValue:
-            self.hard = Hard(daily: self.daily, quantity: quantity)
+            guard quantity > 0 else {
+                self.hard = nil
+                return
+            }
+            self.hard = Hard(quantity: quantity)
         case AddDailiesFormRows.epic.rawValue:
-            self.epic = Epic(daily: self.daily, quantity: quantity)
+            guard quantity > 0 else {
+                self.epic = nil
+                return
+            }
+            self.epic = Epic(quantity: quantity)
         default:
             break
         }
-    }
-
-    // MARK: - UnitDelegate
-
-    func didSelectUnit(cell: UnitCell) {
-        
     }
 
 }

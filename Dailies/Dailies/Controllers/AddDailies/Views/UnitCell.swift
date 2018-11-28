@@ -9,7 +9,7 @@
 import UIKit
 
 protocol UnitDelegate: class {
-    func didSelectUnit(cell: UnitCell)
+    func didSelectUnit(cell: UnitCell, unit: Unit)
 }
 
 class UnitCell: UITableViewCell {
@@ -28,23 +28,25 @@ class UnitCell: UITableViewCell {
     }
 
     @objc func didTapQuantityButton() {
+        self.timeButton.isSelected = false
         self.quantityButton.isSelected = !self.quantityButton.isSelected
-        if self.quantityButton.isSelected {
-            self.quantityButton.backgroundColor = UIColor.black
-        } else {
-            self.quantityButton.backgroundColor = UIColor.clear
-        }
-        self.delegate?.didSelectUnit(cell: self)
+//        if self.quantityButton.isSelected {
+//            self.quantityButton.backgroundColor = UIColor.black
+//        } else {
+//            self.quantityButton.backgroundColor = UIColor.clear
+//        }
+        self.delegate?.didSelectUnit(cell: self, unit: .quantity)
     }
 
     @objc func didTapTimeButton() {
+        self.quantityButton.isSelected = false
         self.timeButton.isSelected = !self.timeButton.isSelected
-        if self.timeButton.isSelected {
-            self.timeButton.backgroundColor = UIColor.black
-        } else {
-            self.timeButton.backgroundColor = UIColor.clear
-        }
-        self.delegate?.didSelectUnit(cell: self)
+//        if self.timeButton.isSelected {
+//            self.timeButton.backgroundColor = UIColor.black
+//        } else {
+//            self.timeButton.backgroundColor = UIColor.clear
+//        }
+        self.delegate?.didSelectUnit(cell: self, unit: .time)
     }
 
 }
