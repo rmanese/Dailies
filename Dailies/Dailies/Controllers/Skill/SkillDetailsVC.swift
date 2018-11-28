@@ -8,9 +8,10 @@
 
 import UIKit
 
-class SkillDetailsVC: UIViewController, AddDailyDelegate {
+class SkillDetailsVC: UIViewController, AddDailyDelegate, UITableViewDataSource {
 
     @IBOutlet weak var statsDisplayView: StatsDisplayView!
+    @IBOutlet weak var tableView: UITableView!
 
     var skill: Skill
 
@@ -30,6 +31,7 @@ class SkillDetailsVC: UIViewController, AddDailyDelegate {
         let addDailiesButton = UIBarButtonItem(title: "Add Daily", style: .plain, target: self, action: #selector(didTapAddDailyButton))
         self.navigationItem.rightBarButtonItem = addDailiesButton
         self.configureStatView()
+        self.tableView.dataSource = self
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -53,7 +55,20 @@ class SkillDetailsVC: UIViewController, AddDailyDelegate {
 
     func didCreateDaily(daily: Daily) {
         self.skill.dailies.append(daily)
-        NSLog("here")
+        self.tableView.reloadData()
+    }
+
+    // MARK: - UITableViewDataSource
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.skill.dailies.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let daily = self.skill.dailies[indexPath.row]
+        let cell = UITableViewCell()
+        cell.textLabel?.text = daily.task
+        return cell
     }
 
 }

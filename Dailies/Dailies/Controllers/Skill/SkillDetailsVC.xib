@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SkillDetailsVC" customModule="Dailies" customModuleProvider="target">
             <connections>
                 <outlet property="statsDisplayView" destination="ita-tP-i42" id="GN4-xA-fdy"/>
+                <outlet property="tableView" destination="sB5-wv-lnt" id="JNL-YU-SJk"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -28,12 +29,20 @@
                         <constraint firstAttribute="height" constant="125" id="7vc-tW-nwX"/>
                     </constraints>
                 </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sB5-wv-lnt">
+                    <rect key="frame" x="0.0" y="153" width="375" height="514"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="ita-tP-i42" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="1Tp-NT-b0H"/>
+                <constraint firstItem="sB5-wv-lnt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="KdZ-qP-SYv"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ita-tP-i42" secondAttribute="trailing" id="Mic-3U-Jjb"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="sB5-wv-lnt" secondAttribute="trailing" id="QyP-wy-4Jq"/>
+                <constraint firstItem="sB5-wv-lnt" firstAttribute="top" secondItem="ita-tP-i42" secondAttribute="bottom" constant="8" id="a2e-Wv-EWt"/>
                 <constraint firstItem="ita-tP-i42" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="l5W-Af-cl8"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="sB5-wv-lnt" secondAttribute="bottom" id="w5l-Dx-7Uy"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="138.40000000000001" y="153.37331334332833"/>
